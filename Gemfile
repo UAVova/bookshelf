@@ -33,6 +33,11 @@ gem 'devise'
 gem 'mysql2'
 # Gem for validation postal codes
 gem 'postoffice'
+
+# Gems for social authorizations
+gem 'omniauth-facebook'
+gem 'omniauth-vkontakte'
+gem 'omniauth-google-oauth2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
