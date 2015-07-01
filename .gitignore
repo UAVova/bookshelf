@@ -1,4 +1,5 @@
 *.rbc
+Gemfile.lock
 capybara-*.html
 .rspec
 /log
