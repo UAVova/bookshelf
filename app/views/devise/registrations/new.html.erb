@@ -1,5 +1,9 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "col-xs-10 form-horizontal" }) do |f| %>
-  <%= devise_error_messages! %>
+  <% if resource.provider.nil? %>
+    <%= devise_error_messages! %>
+  <% else %>
+    <div class="alert alert-warning">Registration is almoust complete, just provide some additional data...</div>
+  <% end %>
   <fieldset>
     <div id="legend">
       <legend class="">Registration</legend>
