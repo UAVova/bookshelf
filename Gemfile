@@ -29,6 +29,10 @@ gem 'autoprefixer-rails'
 
 # Devise gem for authentication
 gem 'devise'
+# Mysql adapter
+gem 'mysql2'
+# Gem for validation postal codes
+gem 'postoffice'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
