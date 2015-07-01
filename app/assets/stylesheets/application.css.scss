@@ -15,3 +15,14 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body
+{
+	padding-top: 80px;
+}
+.alert-error
+{
+	background-color: #F2DEDE;
+	border-color: #EBCCD1;
+	color: #A94442;
+}
