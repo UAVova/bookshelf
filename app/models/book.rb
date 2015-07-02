@@ -1,4 +1,11 @@
 class Book < ActiveRecord::Base
   belongs_to :author
   has_and_belongs_to_many :genres
+  has_many :deliveries
+
+  validates :name, presence: true, length: { minimum: 1 }
+  validates_inclusion_of :year, :in => 1..2100
+  validates :quantity, numericality: {greater_than_or_equal_to: 0}
+  validates :quantity_available, numericality: {greater_than_or_equal_to: 0}
+  validates_presense_of :author
 end
