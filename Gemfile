@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails_admin'
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
