@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150702085131) do
+ActiveRecord::Schema.define(version: 20150702092652) do
 
   create_table "authors", force: :cascade do |t|
     t.string   "first_name", limit: 255,   null: false
@@ -30,6 +30,10 @@ ActiveRecord::Schema.define(version: 20150702085131) do
     t.integer  "author_id",          limit: 4,                 null: false
     t.datetime "created_at",                                   null: false
     t.datetime "updated_at",                                   null: false
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
   end
 
   create_table "books_genres", id: false, force: :cascade do |t|

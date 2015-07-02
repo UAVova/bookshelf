@@ -11,5 +11,5 @@ class Book < ActiveRecord::Base
   validates_inclusion_of :year, :in => 1..2100
   validates :quantity, numericality: {greater_than_or_equal_to: 0}
   validates :quantity_available, numericality: {greater_than_or_equal_to: 0}
-  validates_presense_of :author
+  validates_presence_of :author
 end
