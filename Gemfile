@@ -29,6 +29,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
+# Pagination gem
+gem 'will_paginate'
+
 # Devise gem for authentication
 gem 'devise'
 # Mysql adapter
