@@ -3,14 +3,19 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
-  validates :username, presence: true, length: { minimum: 4, maximum: 16 }, 
-                                       format: { with: /\A[a-zA-Z0-9]+\Z/ }
+  validates :username, presence: true, length: { minimum: 4, maximum: 16 },
+                                       format: { with: /\A[a-zA-Z0-9]+\Z/ },
+                                       uniqueness: true
   validates_presence_of :first_name, :last_name, :adress
-  validates :postal_code, presence: true, :postcode_format => { :country_code => :ua, 
+  validates :postal_code, presence: true, :postcode_format => { :country_code => :ua,
                                                                 :message => "entered is not a valid postcode."}
 
   def password_required?
     super && provider.blank?
+  end
+
+  def name
+    username
   end
 
   private

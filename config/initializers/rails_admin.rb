@@ -16,9 +16,9 @@ RailsAdmin.config do |config|
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
-  RailsAdmin.config do |config|
-    config.included_models = [Book, Author, Genre, Delivery, User, Coupon]
-  end
+  #RailsAdmin.config do |config|
+  #  config.excluded_models = [Model]
+  #end
 
   config.actions do
     dashboard                     # mandatory
