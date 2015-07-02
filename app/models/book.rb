@@ -3,9 +3,9 @@ class Book < ActiveRecord::Base
   has_and_belongs_to_many :genres
   has_many :deliveries
 
-  has_attached_file :image, 
+  has_attached_file :image,
     default_url: "/images/:style/missing.png"
-  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   validates :name, presence: true, length: { minimum: 1 }
   validates_inclusion_of :year, :in => 1..2100
