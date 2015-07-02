@@ -20,9 +20,34 @@ body
 {
 	padding-top: 80px;
 }
+a:hover, a:focus
+{
+  text-decoration: none;
+}
 .alert-error
 {
 	background-color: #F2DEDE;
 	border-color: #EBCCD1;
 	color: #A94442;
+}
+.book
+{
+	height: 200px;
+	box-shadow: 0px 0px 5px grey; 
+	padding: 0px;
+  margin-bottom: 10px;
+}
+img.book-thumb
+{
+  width: 115px; 
+  margin: 15px 0px; 
+  max-height: 170px;
+}
+.book-author-details
+{
+  font-size: 11px;
+}
+.book-details
+{
+  padding-left: 0px;
 }
