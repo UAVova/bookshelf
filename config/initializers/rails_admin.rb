@@ -16,7 +16,7 @@ RailsAdmin.config do |config|
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
-  #config.excluded_models = [Model]
+  config.excluded_models = %W(Bookmark)
 
   config.actions do
     dashboard                     # mandatory
