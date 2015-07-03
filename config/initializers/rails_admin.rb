@@ -3,10 +3,10 @@ RailsAdmin.config do |config|
   ### Popular gems integration
 
   ## == Devise ==
-  # config.authenticate_with do
-  #   warden.authenticate! scope: :user
-  # end
-  # config.current_user_method(&:current_user)
+    config.authenticate_with do
+      warden.authenticate! scope: :admin
+    end
+    config.current_user_method(&:current_admin)
 
   ## == Cancan ==
   # config.authorize_with :cancan
@@ -16,9 +16,7 @@ RailsAdmin.config do |config|
 
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
-  #RailsAdmin.config do |config|
-  #  config.excluded_models = [Model]
-  #end
+  #config.excluded_models = [Model]
 
   config.actions do
     dashboard                     # mandatory
