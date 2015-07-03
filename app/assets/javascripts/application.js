@@ -15,3 +15,4 @@
 //= require turbolinks
 //= require bootstrap-sprockets
 //= require_tree .
+$(document).on('click','a[data-remote="true"]',function(){history.pushState({}, '', $(this).attr("href"))});
