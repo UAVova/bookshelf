@@ -40,7 +40,7 @@ a:hover, a:focus
 img.book-thumb
 {
   width: 115px; 
-  margin: 15px 0px; 
+  padding-top: 15px;
   max-height: 170px;
 }
 .book-author-details
@@ -54,4 +54,34 @@ img.book-thumb
 .pagination>.disabled, .pagination>a, .pagination>em, .pagination>.previous_page, .pagination>.next_page
 {
   @extend .btn, .btn-default 
+}
+.book-show
+{
+  @extend .book;
+  height: 100%;
+}
+.book-buttons
+{
+  margin-top: 5px;
+}
+.book-buttons button
+{
+  width: 116px; 
+  margin-left: 16px; 
+  margin-bottom: 5px;
+}
+.comment-author-avatar
+{
+  border-radius: 3px; 
+  max-width: 80px; 
+  max-height: 80px;
+}
+.comment-content
+{
+  padding: 10px;
+  word-break: break-all;
+}
+.comment-details
+{
+  font-size: 12px;
 }

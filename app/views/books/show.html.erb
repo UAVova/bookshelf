@@ -1,0 +1,37 @@
+<div class="container col-xs-12">
+	<div class="book-show col-xs-12">
+		<div class="col-xs-3">
+			<%= image_tag @book.image.url, class: "book-thumb center-block" %>
+      <div class="book-buttons center-block">
+        <button class="btn btn-success">Order</button>
+        <button class="btn btn-warning ">Vote</button>
+      </div>
+		</div>
+		<div class="col-xs-9 book-details">
+			<h3>
+			 <%= link_to @book.name, @book %>
+			</h3>
+			<div style="padding: 0px;" class="col-xs-12">
+				<p>Author: <%= link_to "author name", @book.author %></p>
+				<p>Release Date: <%= @book.year %></p>
+        <p>Description:</p>
+			  <p> <%= @book.description %> </p>
+		</div>
+	</div>
+	<div class="col-xs-12">
+  <h4 style="text-align: center;">Comments:</h4>
+  <hr>
+  <div class="comments">
+    <div class="comment col-xs-12">
+      <div class="col-xs-2">
+        <img src="http://cs605331.vk.me/v605331097/1a83/Tgrq7sjaa9s.jpg" class="comment-author-avatar center-block">
+      </div>
+      <div class="col-xs-10">
+        <p>Posted by: Vladimir, 18.02.15 18:35</p>
+        <p class="well comment-content">asdaofjoafpaojfaposidfjasdjfsodfjaosdjfaosdfpaosdjfoasdjfosadfjapsodfoiasdjfaposdifjaosidjfaoisdfj</p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
