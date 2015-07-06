@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
   validates_presence_of :first_name, :last_name, :adress
   validates :postal_code, presence: true, :postcode_format => { :country_code => :ua,
                                                                 :message => "entered is not a valid postcode."}
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "80x80>" }, :default_url => "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
   def password_required?
     super && provider.blank?
