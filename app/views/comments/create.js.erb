@@ -1,0 +1,19 @@
+<% if @comment.persisted? %>
+  new PNotify({
+    title: 'Success!',
+    text: 'Your comment was added successfully.',
+    type: 'success',
+    icon: 'ui-icon ui-icon-flag'
+  });
+  $(".comment-form").slideUp(function(){
+  	$("#comment_content").val("")
+  	$(".comments").prepend("<%= j render(@comment) %>")
+  });
+<% else %>
+  new PNotify({
+    title: 'Error',
+    text: 'Something went wrong!',
+    type: 'error',
+    icon: 'ui-icon ui-icon-flag'
+  });
+<% end %>

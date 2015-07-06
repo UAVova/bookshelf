@@ -1,0 +1,15 @@
+<%# Using '@book.send(:comments).klass.new' to avoid adding new blank comment to @book.comments collection%>
+<%= form_for [@book, @book.send(:comments).klass.new], remote: true do |f| %>
+  <div class="col-xs-2">
+    <%= image_tag current_user.avatar.url, class: "comment-author-avatar center-block" %>
+  </div>
+  <div class="post-comment col-xs-10" style="">
+    <div class="form-group">
+      <%= f.label :content, "Comment:" %>
+      <%= f.text_area :content, rows: "5", class: "form-control" %>
+    </div>
+    <div style="padding: 0px;" class="form-group col-xs-3 pull-right">
+      <%= f.submit "Send", class: "btn btn-success btn-block" %>
+    </div>
+  </div>
+<% end %>
