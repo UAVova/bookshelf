@@ -3,6 +3,7 @@ class Book < ActiveRecord::Base
   has_and_belongs_to_many :genres
   has_many :deliveries
   has_many :comments
+  has_many :votes
 
   has_attached_file :image,
     default_url: "/images/:style/missing.png"
