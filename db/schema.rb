@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150703085335) do
+ActiveRecord::Schema.define(version: 20150706110326) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -68,6 +68,14 @@ ActiveRecord::Schema.define(version: 20150703085335) do
   add_index "books_genres", ["book_id"], name: "index_books_genres_on_book_id", using: :btree
   add_index "books_genres", ["genre_id"], name: "index_books_genres_on_genre_id", using: :btree
 
+  create_table "comments", force: :cascade do |t|
+    t.text     "content",    limit: 65535
+    t.integer  "user_id",    limit: 4
+    t.integer  "book_id",    limit: 4
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
   create_table "coupons", force: :cascade do |t|
     t.boolean  "returned",   limit: 1, default: false, null: false
     t.integer  "user_id",    limit: 4,                 null: false
@@ -107,6 +115,10 @@ ActiveRecord::Schema.define(version: 20150703085335) do
     t.string   "last_sign_in_ip",        limit: 255
     t.string   "uid",                    limit: 255
     t.string   "provider",               limit: 255
+    t.string   "avatar_file_name",       limit: 255
+    t.string   "avatar_content_type",    limit: 255
+    t.integer  "avatar_file_size",       limit: 4
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
