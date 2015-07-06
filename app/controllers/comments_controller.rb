@@ -2,10 +2,13 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comments_params)
-    @comment.book = Book.find(params[:book_id])
-    @comment.user_id = current_user.id
+    @vote = Vote.new(votes_params)
+    @comment.book = @vote.book = Book.find(params[:book_id])
+    @comment.user_id = @vote.user_id  = current_user.id
     respond_to do |format|
-      if @comment.save
+      if @comment.valid? && @vote.valid?
+        @comment.save
+        @vote.save
         format.html { redirect_to @comment.book }
       else
         format.html { 
@@ -22,5 +25,9 @@ class CommentsController < ApplicationController
 
   def comments_params
     params.require(:comment).permit(:content)
+  end
+
+  def votes_params
+    params.require(:vote).permit(:rating)
   end
 end

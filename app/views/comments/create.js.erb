@@ -1,4 +1,4 @@
-<% if @comment.persisted? %>
+<% if @comment.persisted? && @vote.persisted? %>
   new PNotify({
     title: 'Success!',
     text: 'Your comment was added successfully.',

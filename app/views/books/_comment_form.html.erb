@@ -8,6 +8,15 @@
       <%= f.label :content, "Comment:" %>
       <%= f.text_area :content, rows: "5", class: "form-control" %>
     </div>
+    <%= fields_for :vote do |v|  %>
+    <div style="padding: 0px; margin-top:5px" class="form-group col-xs-4 pull-left">
+      <%= v.label :rating, "Rating:" %>
+      <%= v.radio_button :rating, 1, :class => "star required", :checked => true %>
+      <% 2.upto(5) do |n| %>
+        <%= v.radio_button :rating, n, :class => "star" %>
+      <% end %>
+    </div>
+    <% end %>
     <div style="padding: 0px;" class="form-group col-xs-3 pull-right">
       <%= f.submit "Send", class: "btn btn-success btn-block" %>
     </div>
