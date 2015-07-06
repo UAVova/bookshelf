@@ -2,6 +2,7 @@ class Book < ActiveRecord::Base
   belongs_to :author
   has_and_belongs_to_many :genres
   has_many :deliveries
+  has_many :comments
 
   has_attached_file :image,
     default_url: "/images/:style/missing.png"
